@@ -127,8 +127,8 @@ Run the program and choose RTL viewer to get RTL realization.
 ```
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: Akash A
-RegisterNumber: 2122221230003
+Developed by: Monish P
+RegisterNumber: 22007945
 */
 
 
