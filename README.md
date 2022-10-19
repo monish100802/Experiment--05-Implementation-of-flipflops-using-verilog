@@ -102,39 +102,128 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+
+STEP 1:
+Open Quartus II and select new project and choose the file location.
+
+STEP 2:
+Module Declaration. Module should have the file name.
+
+STEPS 3:
+Input-Output Delecaration.
+
+STEPS 4:
+Use assign declaration and wire to define the functionality of logic circuits.
+
+STEP 5:
+At the end give endmodule.
+
+STEP 6:
+Run the program and choose RTL viewer to get RTL realization.
 
 
 
 ### PROGRAM 
+```
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Akash A
+RegisterNumber: 2122221230003
 */
 
+
+
+SR FLIPFLOP:
+
+module sr(s,r,clk,Q,Qbar);
+input s,r,Clk;
+output Q,Qbar;
+wire X,Y;
+nand (X,s,Clk);
+nand (Y,r,Clk);
+nand (Q,X,Qbar);
+nand(Qbar,Y,Q);
+endmodule
+
+D FLIPFLOP:
+
+module DF (D,Clock,Q,Qbar);
+input D,Clock;
+output Q,Qbar;
+assign Dbar = ~D;
+wire X,Y;
+nand (X,D,Clock);
+nand (Y,Dbar,Clock);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
+endmodule
+
+JK FLIPFLOP:
+
+module jk(J,K,clk,Q,Qbar);
+input J,K,clk;
+output Q,Qbar;
+wire P,S;
+nand (P,J,clk,Qbar);
+nand (S,K,clk,Q);
+nand (Q,P,Qbar);
+nand (Qbar,S,Q);
+endmodule
+
+T FLIPFLOP:
+
+module TF (T,Clock,Q,Qbar);
+input T,Clock;
+output Q,Qbar;
+wire A,B;
+nand (A,T,Clock,Qbar);
+nand (B,T,Clock,Q);
+nand (Q,A,Qbar);
+nand (Qbar,B,Q);
+endmodule
 
 
 
 
 
 ### RTL LOGIC FOR FLIPFLOPS 
+```
+SR FLIP FLOP:
+![GITHUB LOGO](r.png)
+
+## TIMING DIGRAMS FOR FLIP FLOPS 
+
+![GITHUB LOGO](rt.png)
+
+## RTL LOGIC FOR FLIPFLOPS 
+### JK FLIP FLOP:
+![GITHUB LOGO](j.png)
+
+## TIMING DIGRAMS FOR FLIP FLOPS 
+### JK FLIP FLOP
+![GITHUB LOGO](jt.png)
+
+## RTL LOGIC FOR FLIPFLOPS 
+### D FLIP FLOP:
+![GITHUB LOGO](d.png)
+
+## TIMING DIGRAMS FOR FLIP FLOPS 
+### D FLIP FLOP
+![GITHUB LOGO](dt.png)
 
 
 
 
+## RTL LOGIC FOR FLIPFLOPS 
+### T FLIP FLOP:
+![GITHUB LOGO](t1.png)
 
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
-
-
+## TIMING DIGRAMS FOR FLIP FLOPS 
+###
+T FLIP FLOP
+![GITHUB LOGO](tt.png)
 
 
 
 ### RESULTS 
+All the flipflops are implementde using verilog and their functionality has been validated using their functional tables.
